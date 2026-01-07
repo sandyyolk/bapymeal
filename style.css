@@ -1,0 +1,31 @@
+body {
+    background-color: #ffbc0d; /* McDonald's Yellow */
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    text-align: center;
+}
+
+header {
+    background-color: #bd0017; /* McDonald's Red */
+    padding: 20px;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.menu-container {
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.food-item {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    border: 5px solid #bd0017;
+    width: 300px;
+}
+
+.box-icon {
+    font-size: 80px;
+}
