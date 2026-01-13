@@ -5,21 +5,14 @@ body {
     text-align: center;
 }
 
-header {
-    background-color: #bd0017; /* McDonald's Red */
-    padding: 20px;
-    color: white;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
 .menu-container {
-    padding: 50px;
+    padding: 40px;
     display: flex;
     justify-content: center;
 }
 
 .food-item {
-    background: white;
+    background: rgb(255, 255, 255);
     padding: 30px;
     border-radius: 15px;
     border: 5px solid #bd0017;
@@ -28,4 +21,53 @@ header {
 
 .box-icon {
     font-size: 80px;
+}
+
+/* The Header Container */
+.main-header {
+    background-color: #7e7373; /* McDonald's Red */
+    display: flex;
+    align-items: center; /* Centers items vertically */
+    justify-content: space-between; /* Pushes left, center, and right apart */
+    position: sticky; /* Keeps header at the top when you scroll */
+    top: 0;
+    z-index: 100;
+    height: 70px;
+}
+
+/* Left Section: Menu Button */
+.header-left {
+    flex: 1; /* Takes up 1 unit of space */
+    display: flex;
+    justify-content: flex-start;
+}
+
+.menu-button {
+    background: none;
+    border: none;
+    color: rgb(0, 0, 0);
+    font-size: 30px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.menu-button:hover {
+    transform: scale(1.1);
+}
+
+/* Center Section: Logo */
+.header-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.logo {
+    height: 50px; /* Adjust size to fit your logo image */
+    width: auto;
+}
+
+/* Right Section: Placeholder */
+.header-right {
+    flex: 1; /* Keeps the middle perfectly centered by pushing back */
 }
