@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Meal Menu</title>
+    <title>BapyMeal Time</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,18 +13,35 @@
                 <button class="menu-button" aria-label="Open Menu">
                     ☰
                 </button>
+                <div id="menuOverlay" class="overlay"></div>
+                <nav id="sideMenu" class="side-menu">
+                    <button id="closeMenu" class="close-btn">&times;</button>
+                     <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Event Info</a></li>
+                        <li><a href="#">Menu</a></li>
+                        <li><a href="#">About UPB</a></li>
+                    </ul>
+                </nav>
             </div>
             <div class="header-center">
-                <img src="upb.png" alt="upb" class="logo">
+                <img src="images/upb.png" alt="upb" class="logo">
             </div>
             <div class="header-right"></div>
     </header>
-    <main class="menu-container">
-        <div class="food-item">
-            <div class="box-icon">🎁</div>
-            <h2>The Happy Meal Box</h2>
-            <p>Choose your meal items below!</p>
+    <main class="hero-section">
+    <div class="spline-container">
+        <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.35/build/spline-viewer.js"></script>
+        <spline-viewer url="https://prod.spline.design/ZLTMFitxnrnnPysk/scene.splinecode"></spline-viewer>
+    <div class="hero-content">
+         <h1>Rotate the box to see what's inside!</h1>
+        <button class="cta-button"> Learn More</button>
+
+        <div class="scroll-arrow">
+        <span></span>
         </div>
-    </main>
+    </div>
+</main>
+    <script src="script.js"></script>
 </body>
 </html>

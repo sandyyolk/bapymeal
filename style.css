@@ -1,38 +1,26 @@
 body {
-    background-color: #ffbc0d; /* McDonald's Yellow */
+    background-color: #ffffff; /* McDonald's Yellow */
     font-family: 'Arial', sans-serif;
     margin: 0;
     text-align: center;
 }
 
-.menu-container {
-    padding: 40px;
-    display: flex;
-    justify-content: center;
-}
-
-.food-item {
-    background: rgb(255, 255, 255);
-    padding: 30px;
-    border-radius: 15px;
-    border: 5px solid #bd0017;
-    width: 300px;
-}
-
-.box-icon {
-    font-size: 80px;
-}
-
 /* The Header Container */
 .main-header {
-    background-color: #7e7373; /* McDonald's Red */
+    background-color: #a4b8b9; 
     display: flex;
     align-items: center; /* Centers items vertically */
     justify-content: space-between; /* Pushes left, center, and right apart */
     position: sticky; /* Keeps header at the top when you scroll */
     top: 0;
     z-index: 100;
-    height: 70px;
+    height: 40px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+main {
+    margin: 0;
+    padding: 0;
 }
 
 /* Left Section: Menu Button */
@@ -45,7 +33,7 @@ body {
 .menu-button {
     background: none;
     border: none;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     font-size: 30px;
     cursor: pointer;
     transition: transform 0.2s;
@@ -63,7 +51,7 @@ body {
 }
 
 .logo {
-    height: 50px; /* Adjust size to fit your logo image */
+    height: 30px; 
     width: auto;
 }
 
@@ -71,3 +59,200 @@ body {
 .header-right {
     flex: 1; /* Keeps the middle perfectly centered by pushing back */
 }
+
+/* Open Menu*/
+.overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999; /* Just below the menu, but above everything else */
+}
+
+/* The Side Menu */
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: white;
+    z-index: 1000;
+    transition: 0.3s; /* Makes it slide smoothly */
+    transform: translateX(-100%); /* Pushes it off-screen to the left */
+    padding-top: 60px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+}
+
+.side-menu.active {
+    transform: translateX(0);
+}
+
+.side-menu ul { list-style: none; padding: 0; }
+.side-menu ul li { padding: 15px 25px; border-bottom: 1px solid #eee; }
+.side-menu ul li a { text-decoration: none; color: #333; font-weight: bold; }
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/*Spline Addition*/ 
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden; /* Prevents scrollbars if the model is slightly larger */
+    margin: 0;
+    padding: 0;
+}
+
+.spline-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+spline-viewer {
+    width: 100vw;
+    height: 100vh;
+}
+
+.hero-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; 
+    align-items: center; 
+    
+    padding-bottom: 60px; 
+    z-index: 10;
+    pointer-events: none; /* Allows you to drag the 3D model "through" the text */
+    box-sizing: border-box;
+    background: linear-gradient(to top, rgba(0,0,0,0.4) 0%, transparent 30%);
+}
+
+.hero-content h1, .hero-content p {
+    color: white;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5); 
+}
+
+.cta-button {
+    pointer-events: auto; 
+    background-color: #272323;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+}
+
+/* Arrow Container */
+.scroll-arrow {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* The Arrow Shapes */
+.scroll-arrow span {
+    display: block;
+    width: 15px;
+    height: 15px;
+    border-bottom: 3px solid rgb(255, 255, 255);
+    border-right: 3px solid white;
+    transform: rotate(45deg);
+    margin: -5px;
+    animation: bounce-arrow 2s infinite;
+}
+
+.scroll-arrow span:nth-child(2) {
+    animation-delay: -0.2s;
+}
+
+@keyframes bounce-arrow {
+    0% {
+        opacity: 0;
+        transform: rotate(45deg) translate(-10px, -10px);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+}
+
+
+
+
+
+
+
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .main-header {
+        height: 60px; /* Make header a bit taller for easier finger-tapping */
+    }
+
+    .side-menu {
+        width: 80%; /* On mobile, the menu should cover most of the screen */
+        left: -80%; /* Hide it further off-screen to match width */
+    }
+
+    .menu-button {
+        font-size: 35px; /* Make the ☰ icon bigger for thumbs */
+        padding-left: 15px;
+    }
+
+    .logo {
+        height: 50px; /* Slightly smaller logo to save space */
+    }
+}
+    .hero-content {
+        padding-bottom: 100px; /* Pushes it up a bit higher for mobile thumbs */
+    }
+
+/*pending -full screeen side bar*/
+@media (max-width: 768px) { 
+    .side-menu {
+        width: 80%; 
+        left: 0; 
+        transform: translateX(-100%); /* Start hidden off-screen */
+        background-color: white; /* Ensure it's not transparent/grey */
+    }
+
+    .side-menu.active {
+        transform: translateX(0); /* Slides it back into view */
+    }
+}
+    .spline-container {
+        height: 350px; /* Smaller height for mobile screens */
+    }
+    
+    .hero-text h1 {
+        font-size: 1.8rem;
+    }
