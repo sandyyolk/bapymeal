@@ -7,20 +7,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <header class="main-header">
+    <header class="main-header">
             <div class="header-left">
-                <button class="menu-button" aria-label="Open Menu">
-                    ☰
-                </button>
+                <button class="menu-button" aria-label="Open Menu"> ☰  </button>
                 <div id="menuOverlay" class="overlay"></div>
                 <nav id="sideMenu" class="side-menu">
                     <button id="closeMenu" class="close-btn">&times;</button>
                      <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Event Info</a></li>
-                        <li><a href="#">Menu</a></li>
-                        <li><a href="#">About UPB</a></li>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#event-info">Event Info</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#about">About UPB</a></li>
                     </ul>
                 </nav>
             </div>
@@ -29,19 +26,30 @@
             </div>
             <div class="header-right"></div>
     </header>
-    <main class="hero-section">
-    <div class="spline-container">
-        <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.35/build/spline-viewer.js"></script>
-        <spline-viewer url="https://prod.spline.design/ZLTMFitxnrnnPysk/scene.splinecode"></spline-viewer>
-    <div class="hero-content">
-         <h1>Rotate the box to see what's inside!</h1>
-        <button class="cta-button"> Learn More</button>
 
-        <div class="scroll-arrow">
-        <span></span>
+<main>
+    <section id ="home" class="hero-section">
+        <div class="spline-container">
+            <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.35/build/spline-viewer.js"></script>
+            <spline-viewer url="https://prod.spline.design/ZLTMFitxnrnnPysk/scene.splinecode"></spline-viewer>
+        </div><div class="hero-content">
+             <h1>Rotate the box to see what's inside!</h1>
+            <button class="cta-button"> Learn More</button>
+            <div class="scroll-arrow">
+                <span></span>
+            </div>
         </div>
-    </div>
+    </section>
+    
+    <section id="event-info" class="info-section">
+        <div class="info-container">
+            <h2>Event Details</h2>
+            <p>Info presents as you scroll here</p>
+        </div>
+    </section>
+
 </main>
+
     <script src="script.js"></script>
 </body>
 </html>
